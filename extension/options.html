@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Herdr Web Bridge 设置</title>
+    <link rel="stylesheet" href="src/options.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="icons/bridge.svg" width="48" height="48" alt="">
+        <div><h1>Herdr Web Bridge</h1><p>连接状态与隐私边界</p></div>
+      </header>
+      <section>
+        <h2>连接</h2>
+        <dl>
+          <dt>扩展 ID</dt><dd id="extension-id"></dd>
+          <dt>Native Host</dt><dd><code>com.herdr_web_bridge</code></dd>
+          <dt>状态</dt><dd id="status">检查中…</dd>
+        </dl>
+        <button id="retry">重新检查</button>
+      </section>
+      <section>
+        <h2>隐私与权限</h2>
+        <p>桥接只保存绑定 URL、标题和任务状态；不读取或保存提示词、ChatGPT 回答正文、Cookie、Token 或登录凭据。</p>
+        <p>ChatGPT 权限固定为 <code>https://chatgpt.com/*</code>。其他站点仅在绑定时请求该 origin 的可选权限。</p>
+      </section>
+    </main>
+    <script src="src/options.js"></script>
+  </body>
+</html>
+

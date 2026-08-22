@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Herdr Web Bridge 自定义工具示例</title>
+    <style>
+      body { max-width: 720px; margin: 60px auto; padding: 0 24px; font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif; color: #172033; }
+      .panel { padding: 28px; border: 1px solid #dbe3ef; border-radius: 14px; box-shadow: 0 10px 30px #25385a12; }
+      button { margin: 6px; padding: 10px 16px; border: 0; border-radius: 8px; color: white; background: #315efb; cursor: pointer; }
+      button[data-state="error"] { background: #b93b48; } code { background: #eef2f7; padding: 2px 5px; }
+    </style>
+  </head>
+  <body>
+    <main class="panel">
+      <h1>简历优化工具状态示例</h1>
+      <p>先把此 localhost 页面绑定为“自定义网页工具”，再按顺序测试 <code>running → done</code> 或错误状态。</p>
+      <div>
+        <button data-state="running">发送 running</button>
+        <button data-state="done">发送 done</button>
+        <button data-state="error">发送 error</button>
+        <button data-state="idle">发送 idle</button>
+      </div>
+      <p id="status" role="status">尚未发送事件</p>
+    </main>
+    <script src="custom-tool-integration.js"></script>
+  </body>
+</html>
+

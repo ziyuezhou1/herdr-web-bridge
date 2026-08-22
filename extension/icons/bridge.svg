@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Herdr Web Bridge">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#315efb"/><stop offset="1" stop-color="#5b8cff"/></linearGradient></defs>
+  <rect width="128" height="128" rx="28" fill="url(#g)"/>
+  <path d="M31 43h25a16 16 0 0 1 16 16v26H57a16 16 0 0 1-16-16V55H31z" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M97 85H72a16 16 0 0 1-16-16V43h15a16 16 0 0 1 16 16v14h10z" fill="none" stroke="#d9e5ff" stroke-width="9" stroke-linejoin="round"/>
+</svg>

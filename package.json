@@ -1,0 +1,16 @@
+{
+  "name": "herdr-web-bridge",
+  "version": "0.1.3-mvp",
+  "private": true,
+  "description": "Edge-to-Herdr bridge for Windows",
+  "scripts": {
+    "test": "node --test extension/tests/*.test.js",
+    "test:extension": "node --test extension/tests/*.test.js",
+    "lint": "node scripts/check-js.js",
+    "build": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

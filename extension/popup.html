@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Herdr Web Bridge</title>
+    <link rel="stylesheet" href="src/popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <img src="icons/bridge.svg" width="36" height="36" alt="">
+        <div>
+          <h1>Herdr Web Bridge</h1>
+          <p id="connection" class="muted">正在连接本地桥接…</p>
+        </div>
+      </header>
+
+      <section class="card" aria-labelledby="page-heading">
+        <h2 id="page-heading">当前网页</h2>
+        <p id="page-title" class="title">—</p>
+        <p id="page-url" class="url">—</p>
+        <div class="row compact">
+          <span class="label">网站类型</span>
+          <select id="adapter" aria-label="网站 adapter">
+            <option value="chatgpt">ChatGPT</option>
+            <option value="custom-tool">自定义网页工具</option>
+            <option value="generic">通用网页（手动）</option>
+          </select>
+        </div>
+        <div class="row compact health-row">
+          <span class="label">Adapter 健康度</span>
+          <span id="adapter-health" class="health">未开始监控</span>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="binding-heading">
+        <div class="section-heading">
+          <h2 id="binding-heading">项目绑定</h2>
+          <span id="binding-state" class="badge">未绑定</span>
+        </div>
+        <label for="workspace">Herdr 工作区</label>
+        <select id="workspace">
+          <option value="">选择具有公开项目路径的工作区</option>
+        </select>
+        <p id="workspace-path" class="path-hint">路径来源优先级：worktree.checkout_path，其次为唯一的 Herdr pane cwd。</p>
+        <label class="check-row">
+          <input id="notifications" type="checkbox" checked>
+          <span>任务完成或出错时通知</span>
+        </label>
+        <div class="button-row">
+          <button id="bind" class="primary">绑定</button>
+          <button id="unbind" class="secondary" disabled>解除绑定</button>
+        </div>
+        <button id="open-workspace" class="wide secondary" disabled>打开对应 Herdr 工作区</button>
+        <p id="quick-action" class="muted"></p>
+      </section>
+
+      <section class="card" aria-labelledby="test-heading">
+        <h2 id="test-heading">手动状态测试</h2>
+        <div class="test-grid">
+          <button data-state="running" disabled>运行中</button>
+          <button data-state="done_unread" disabled>已完成</button>
+          <button data-state="error" disabled>出错</button>
+          <button data-state="viewed" disabled>清除未读</button>
+        </div>
+      </section>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </main>
+    <script src="src/popup-model.js"></script>
+    <script src="src/popup.js"></script>
+  </body>
+</html>

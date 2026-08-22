@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Herdr Web Bridge",
+  "version": "0.1.3",
+  "description": "Bind Edge pages to Herdr project workspaces and synchronize task state.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvkNIfH6pzFxQFkDTAnJTnm9Clelbx6XrN2ARQ/A7aSl8SYAuPaD/jgmtU4dPRwmhgZxKY+Fx7Xc3tLYHIdqOvsOzFgBDf2/M/SDieLw16+HsEEVi29mQHqZhOOfRBZSsgQu/nA30W7Cl3dZ4QG6GEYYPTvr/QYyeYdiaLu7GFt7hFMRz3r9pzdp/Wed3XL/sbmbskN+Sf3ViQ93mM6Pg/OtTBclQRs3LSx622EphgQmU+Nvbf4NXujRQRUWIaq4UjxbZ4Ai1+GWxqy0WUVCUEGtZYc+ktmCFq1t8h+JLckb/oNxNAXed3upngqfuz8aKvFkwtlqajKKHRFjs8QuFDQIDAQAB",
+  "permissions": [
+    "storage",
+    "tabs",
+    "nativeMessaging",
+    "notifications",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_title": "Herdr Web Bridge",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": [
+        "src/protocol.js",
+        "src/state-machine.js",
+        "src/adapters/chatgpt.js",
+        "src/adapters/custom-tool.js",
+        "src/adapters/generic.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

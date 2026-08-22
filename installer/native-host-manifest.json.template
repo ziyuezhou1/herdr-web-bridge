@@ -1,0 +1,10 @@
+{
+  "name": "com.herdr_web_bridge",
+  "description": "Herdr Web Bridge Native Messaging Host",
+  "path": "{{EXECUTABLE_PATH}}",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://{{EXTENSION_ID}}/"
+  ]
+}
+

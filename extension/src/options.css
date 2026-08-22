@@ -1,0 +1,16 @@
+:root { font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif; color: #172033; background: #f4f7fb; }
+body { margin: 0; }
+main { max-width: 720px; margin: 48px auto; padding: 0 22px; }
+header { display: flex; gap: 14px; align-items: center; margin-bottom: 24px; }
+h1 { margin: 0; font-size: 25px; }
+header p { margin: 4px 0 0; color: #657086; }
+section { margin: 14px 0; padding: 22px; border: 1px solid #dbe3ef; border-radius: 14px; background: white; box-shadow: 0 8px 24px #243a5a0d; }
+h2 { margin-top: 0; font-size: 16px; }
+dl { display: grid; grid-template-columns: 130px 1fr; gap: 10px; }
+dt { color: #68758a; }
+dd { margin: 0; word-break: break-all; }
+p { color: #46536a; line-height: 1.65; }
+button { padding: 8px 14px; border: 0; border-radius: 8px; color: white; background: #315efb; cursor: pointer; }
+.ok { color: #157347; }
+.error { color: #b02a37; }
+
